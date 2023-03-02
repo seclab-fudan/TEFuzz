@@ -29,7 +29,8 @@ class SinkDetect():
     error_type = None
 
     def __init__(self) -> None:
-        logger.info("[*]Sink detect start")
+        logger.info("*"*100)
+        logger.info("[*]START Testcase Probing")
         pass
 
     def set_seed_file_name(self, filename):
@@ -70,7 +71,7 @@ class SinkDetect():
                     self.func_3()
         logger.info("testcase_num :" + str(self.test_case_num))
         logger.info("interesting_testcase_num:" + str(self.final_res_all))
-        logger.info("unique_testcase_num :" + str(self.final_res.__len__()))
+        logger.info("unique_interesting_testcase_num :" + str(self.final_res.__len__()))
         self.save()
 
     def func_0(self):
@@ -121,9 +122,6 @@ class SinkDetect():
                 self.func_1()
 
     def save(self):
-        if ADAPTION_FLAG:
-            df = pd.DataFrame({"modeling": self.mutate_still_error, "error message": self.mutate_still_error_info})
-            df.to_excel(SINK_PATH + TE_NAME + "_te_error.xlsx", index=False)
         modeling = []
         location = []
         cc = []
@@ -133,7 +131,7 @@ class SinkDetect():
             location.append(i[1])
             cc.append(i[2])
             controllable_line.append(i[3])
-        logger.info("[*]Sink detect completed")
+        logger.info("[*]Testcase Probing Finished")
         df = pd.DataFrame(
             {"modeling": modeling, "location": location, "cc": cc, "controllable_line": controllable_line}
         )
