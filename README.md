@@ -64,7 +64,7 @@ If you find this repository useful, please consider citing our paper.
 @inproceedings{Yudi2023TEfuzz,
   title={Remote Code Execution from SSTI in the Sandbox:Automatically Detecting and Exploiting Template Escape Bugs},
   author={Yudi Zhao, Yuan Zhang, Min Yang},
-  booktitle={{USENIX S}ecurity'23},
+  booktitle={USENIX Security'23},
   year={2023}
 }
 ```
