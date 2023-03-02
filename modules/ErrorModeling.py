@@ -44,7 +44,7 @@ class ErrorModeling():
             filename = re.findall("not trusted file path '(.*?)'", self.error_message)[0].split(":")[-1]
             modeling_file_name = filename.replace(config.BASE_TE_PATH+"smarty/demo/", "")
             filename = filename.replace('smarty/demo/', 'smarty/demo/templates/')
-            function.generate_new_file("", filename)
+            function.generate_new_file(function.get_te_mutate_path(self.te_name), filename)
             return self.modeling.replace(modeling_file_name, "templates/" + modeling_file_name), self.seed
 
         if re.findall("URI '(.*?)' not allowed by security setting", self.error_message):
@@ -60,10 +60,10 @@ class ErrorModeling():
             return self.modeling, self.seed
 
         if re.findall("missing '(.*?)' parameter", self.error_message):
-            return self.modeling.replace("aLtMan", ""), self.seed
+            return self.modeling.replace("Un1QuE", ""), self.seed
 
         if re.findall("missing '(.*?)' attribute", self.error_message):
-            return self.modeling.replace("aLtMan", ""), self.seed
+            return self.modeling.replace("Un1QuE", ""), self.seed
 
         if re.findall("unclosed {(.*?)}", self.error_message):
             self.modeling = self.modeling + "{/" + re.findall("unclosed {(.*?)}", self.error_message)[0] + "}"
