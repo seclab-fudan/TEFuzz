@@ -11,7 +11,8 @@ from config import *
 class Fuzz():
 
     def __init__(self) -> None:
-        logger.info("[*]start fuzzing")
+        logger.info("*"*100)
+        logger.info("[*]START PoC Generation ")
         self.sink_file_name = ''
         self.test_case_num = 0
         self.final_res_all = 0
@@ -120,7 +121,8 @@ class Fuzz():
 
     def save(self):
         logger.info("test_case_num :" + str(self.test_case_num))
-        logger.info("parse_error :" + str(self.parse_error))
+        logger.info("poc_num :" + str(self.parse_error))
+        logger.info("PoC Generation Finished")
         df = pd.DataFrame(
             {
                 "poc": self.poc_res,
