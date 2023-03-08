@@ -39,7 +39,7 @@ For convenience, we provide a docker image for the Target TE running environment
 You need to mount docker's `/var/www/html/tefuzz` directory to the host so that tools can read the information.
 
 ```bash
-docker pull altm4nz/tefuzz:latest
+docker pull altm4nz/tefuzz:1.0
 docker run -itd -p 80:80 -v /var/www/html/tefuzz:/var/www/html/tefuzz--name tefuzz altm4nz/tefuzz 
 docker cp tefuzz:/tmp/tefuzz/ /var/www/html/
 docker cp tefuzz:/tmp/seed/ $YOUR_TEFUZZ_PATH/result/
