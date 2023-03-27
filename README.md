@@ -40,7 +40,7 @@ You need to mount docker's `/var/www/html/tefuzz` directory to the host so that 
 
 ```bash
 docker pull altm4nz/tefuzz:1.0
-docker run -itd -p 80:80 -v /var/www/html/tefuzz:/var/www/html/tefuzz--name tefuzz altm4nz/tefuzz:1.0 
+docker run -itd -p 80:80 -v /var/www/html/tefuzz:/var/www/html/tefuzz --name tefuzz altm4nz/tefuzz:1.0 
 docker cp tefuzz:/tmp/tefuzz/ /var/www/html/
 docker cp tefuzz:/tmp/seed/ $YOUR_TEFUZZ_PATH/result/
 docker exec -it tefuzz /bin/bash -c 'service apache2 start'
