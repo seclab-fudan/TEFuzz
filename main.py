@@ -3,13 +3,13 @@ from modules import  SinkDetect, Fuzz, Exploit
 from Logger import logger
 
 if __name__ == "__main__":
-    # logger.info("[*]Target TE : " + TE_NAME)
-    # sink_detect= SinkDetect.SinkDetect()
-    # sink_detect.set_seed_file_name(TE_NAME + "_normal.xlsx")
-    # sink_detect.detect()
-    # fuzz = Fuzz.Fuzz()
-    # fuzz.set_sink_file_name(TE_NAME+"_sink.xlsx")
-    # fuzz.fuzz()
+    logger.info("[*]Target TE : " + TE_NAME)
+    sink_detect= SinkDetect.SinkDetect()
+    sink_detect.set_seed_file_name(TE_NAME + "_normal.xlsx")
+    sink_detect.detect()
+    fuzz = Fuzz.Fuzz()
+    fuzz.set_sink_file_name(TE_NAME+"_sink.xlsx")
+    fuzz.fuzz()
     exp = Exploit.Exploit()
     exp.set_poc_file_name(TE_NAME+"_poc.xlsx")
     exp_list = exp.code_wrapper()
