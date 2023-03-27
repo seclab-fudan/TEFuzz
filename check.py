@@ -15,4 +15,5 @@ if __name__ == "__main__":
     exp_list = exp.code_wrapper()
     logger.info("[*]Generate "+str(exp_list.__len__())+" EXP")
     logger.info(exp_list)
-    logger.info("[*]Check success!")
+    if exp_list:
+        logger.info("[*]Check success!")
