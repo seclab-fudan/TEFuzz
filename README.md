@@ -14,6 +14,7 @@ Table of Contents
 * OS: 
   - TEFuzz is developed and tested under Ubuntu 18.04.
 * Python3 (>= 3.8)
+* PHP7.2
 * Docker 
 
 ## Structure
