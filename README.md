@@ -3,10 +3,10 @@ This repository provides the tool for the paper "Remote Code Execution from SSTI
 
 Table of Contents
 =================
-* [Requirements](##requirements)
-* [Structure](##Structure)
-* [Getting Started Instructions](##getting-started-instructions)
-* [Publication](##publication)
+* [Requirements](#requirements)
+* [Structure](#Structure)
+* [Getting Started Instructions](#getting-started-instructions)
+* [Publication](#publication)
 
 ## Requirements
 
