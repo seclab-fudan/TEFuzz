@@ -3,11 +3,10 @@ This repository provides the tool for the paper "Remote Code Execution from SSTI
 
 Table of Contents
 =================
-* [Requirements](#requirements)
-* [Getting Started Instructions](#getting-started-instructions)
-  * [Docker Setup](#docker-setup)
-  * [Build from Scratch](#build-from-scratch)
-* [Publication](#publication)
+* [Requirements](##requirements)
+* [Structure](##Structure)
+* [Getting Started Instructions](##getting-started-instructions)
+* [Publication](##publication)
 
 ## Requirements
 
@@ -20,9 +19,19 @@ Table of Contents
 ## Structure
 
 * TEFuzz
+  * CodeWrapper: context-sensitive code wrapping based on php-parser.
+  * modules: 
+    * ErrorModeling.py: script for modeling error messages. 
+    * SeedCheck.py && SeedCheck.py: script for init seeds.
+    * SinkDetect.py: script for identifying interesting testcase.
+    * Fuzz.py: script for generating PoCs.
+    * Exploit.py: script for generating EXPs.
+  * check.py: script for basic testing.
+  * main.py: Run entry of TEFuzz.
 * TE driver: Template engine running environment.
 
-#### **0. Clone the TEFuzz repository**
+## Getting Started Instructions
+### **0. Clone the TEFuzz repository**
 
 ```bash
 git clone https://github.com/seclab-fudan/TEFuzz
@@ -35,7 +44,8 @@ sudo apt-get update
 sudo apt-get install python3.8 python3-pip
 python3.8 -m pip install -r requirements.txt
 ```
-#### **2. Build docker of TE driver**
+### **2. Build docker of TE driver**
+#### docker image
 For convenience, we provide a docker image for the Target TE running environment.
 You need to mount docker's `/var/www/html/tefuzz` directory to the host so that tools can read the information.
 
@@ -49,7 +59,9 @@ cd $YOUR_TEFUZZ_PATH/CodeWrapper && composer install
 
 ```
 
-#### **3. Run TEFuzz**
+#### dockerfile
+
+### **3. Run TEFuzz**
 First you need to do basic testing.
 Set `TARGET_IP` to your docker ip.
 ```bash
