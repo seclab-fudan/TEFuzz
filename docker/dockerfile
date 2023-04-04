@@ -1,0 +1,11 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get install -y php7.2 libapache2-mod-php7.2 php7.2-xdebug
+RUN sed -i 's/\/var\/www\/html/\/var\/www\/html\/tefuzz/g' /etc/apache2/sites-available/000-default.conf
+RUN sed -i 's/display_errors = Off/display_errors = On/g' /etc/php/7.2/apache2/php.ini
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+EXPOSE 80
+CMD ["/start.sh"]
