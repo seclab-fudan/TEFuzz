@@ -59,6 +59,7 @@ docker exec -it tefuzz /bin/bash -c 'service apache2 start'
 ```
 
 #### dockerfile
+Or you can use dockerfile to build TE driver
 ```bash
 docker build -t tefuzz .
 docker run -itd -p 80:80 -v /var/www/html/tefuzz:/var/www/html/tefuzz --name tefuzz tefuzz
