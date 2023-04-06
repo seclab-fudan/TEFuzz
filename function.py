@@ -107,7 +107,7 @@ def get_te_url(te_name):
 
 def get_te_mutate_path(te_name):
     if te_name == "smarty":
-        return "/Users/altm4nz/site/tefuzz/smarty/demo/"
+        return BASE_TE_PATH+"smarty/demo/"
 
 
 def get_te_cache_path(te_name):
