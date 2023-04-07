@@ -43,7 +43,10 @@ git clone https://github.com/seclab-fudan/TEFuzz
 sudo apt-get update
 sudo apt-get install python3.8 python3-pip
 python3.8 -m pip install -r requirements.txt
-cd $YOUR_TEFUZZ_PATH/CodeWrapper && composer install
+
+cd $YOUR_TEFUZZ_PATH/CodeWrapper 
+composer install
+sed -i 's/protected $attributes;/public $attributes;/g' vendor/nikic/php-parser/lib/PhpParser/NodeAbstract.php
 ```
 ### **2. Build docker of TE driver**
 #### docker image
